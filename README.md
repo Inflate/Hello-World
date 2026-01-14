@@ -1,14 +1,16 @@
 # Podcast Application
 
-A simple command-line application for subscribing to and listening to podcasts. Manage your podcast subscriptions, browse episodes, and download audio files.
+A podcast management application available in both graphical (GUI) and command-line (CLI) interfaces. Subscribe to podcasts, browse episodes, and download audio files with ease.
 
 ## Features
 
+- **Two Interfaces**: Choose between a user-friendly GUI or powerful CLI
 - **Subscribe to podcasts**: Add podcasts using their RSS feed URLs
 - **Manage subscriptions**: View all subscribed podcasts and unsubscribe when needed
 - **Browse episodes**: View recent episodes for any subscribed podcast
-- **Download episodes**: Download podcast episodes to listen offline
+- **Download episodes**: Download podcast episodes to listen offline with progress tracking
 - **Persistent storage**: Your subscriptions are saved automatically
+- **Episode details**: View descriptions and metadata for each episode
 
 ## Installation
 
@@ -25,7 +27,26 @@ pip install -r requirements.txt
 
 ## Usage
 
-### Subscribe to a Podcast
+### Graphical Interface (GUI)
+
+For a user-friendly graphical interface, run:
+
+```bash
+python podcast_gui.py
+```
+
+The GUI provides:
+- **Left Panel**: Subscribe to new podcasts and view your subscription list
+- **Right Panel**: Browse episodes and view detailed descriptions
+- **Download Manager**: Download episodes with a single click
+
+Simply paste a podcast feed URL, click Subscribe, then select podcasts and episodes from the lists.
+
+### Command-Line Interface (CLI)
+
+For command-line usage, use `podcast_app.py`:
+
+#### Subscribe to a Podcast
 
 ```bash
 python podcast_app.py subscribe <feed_url>
@@ -88,7 +109,8 @@ Here are some popular podcast RSS feeds to get started:
 ## File Structure
 
 ```
-podcast_app.py         # Main application CLI
+podcast_gui.py         # Graphical user interface (GUI)
+podcast_app.py         # Command-line interface (CLI)
 podcast_manager.py     # Core podcast management logic
 models.py              # Data models for podcasts and episodes
 requirements.txt       # Python dependencies
@@ -99,6 +121,7 @@ downloads/             # Downloaded episodes (auto-generated)
 ## Requirements
 
 - Python 3.6 or higher
+- Tkinter (included with most Python installations)
 - Internet connection for fetching feeds and downloading episodes
 
 ## How It Works
